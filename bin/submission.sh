@@ -3,8 +3,7 @@
 ## change to parent directory of directory in which this script is
 cd "$(dirname "$0")/..";
 
-##latest_date="$(date "+%Y-%m-%d")"
-latest_date="2022-05-03"
+latest_date="$(date "+%Y-%m-%d")"
 
 mtp_dir="format-forecast/data/all"
 mtp_filename="$latest_date-lshtm-forecast.csv"
@@ -30,7 +29,7 @@ Rscript R/get_ons_estimates.R
 export LFTP_PASSWORD=$(gpg --quiet --decrypt config/pass.gpg)
 export SFTP_HOST=$(echo $(cat config/sftp_host))
 export SFTP_DIR=$(echo $(cat config/sftp_dir)) 
-echo lftp --env-password $SFTP_HOST -e "cd $SFTP_DIR; put $(echo $(ls remote/submit/*)); bye"
+lftp --env-password $SFTP_HOST -e "cd $SFTP_DIR; put $(echo $(ls remote/submit/*)); bye"
 export LFTP_PASSWORD=""
 export SFTP_HOST=""
 export SFTP_DIR=""
