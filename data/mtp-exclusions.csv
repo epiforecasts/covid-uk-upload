@@ -1,5 +1,10 @@
 Geography,ValueType
 Wales,hospital_inc
 Northern Ireland,hospital_inc
+Scotland,hospital_inc
 Wales,hospital_prev
 Northern Ireland,hospital_prev
+Scotland,hospital_prev
+Wales,death_inc_line
+Northern Ireland,death_inc_line
+Scotland,death_inc_line

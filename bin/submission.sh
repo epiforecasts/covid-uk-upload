@@ -23,15 +23,10 @@ wget https://raw.githubusercontent.com/epiforecasts/covid19-uk-nowcasts-projecti
 
 ## MTP exclusions
 Rscript R/mtp_exclusions.r remote/submit/$mtp_filename
+Rscript R/r_exclusions.r remote/submit/$r_filename
 
-Rscript R/get_ons_estimates.R
+Rscript R/get_ons_estimates.r
 
-export LFTP_PASSWORD=$(gpg --quiet --decrypt config/pass.gpg)
-export SFTP_HOST=$(echo $(cat config/sftp_host))
-export SFTP_DIR=$(echo $(cat config/sftp_dir)) 
-lftp --env-password $SFTP_HOST -e "cd $SFTP_DIR; put $(echo $(ls remote/submit/*)); bye"
-export LFTP_PASSWORD=""
-export SFTP_HOST=""
-export SFTP_DIR=""
+Rscript R/upload_files.r
 
 mv remote/submit/* remote/submitted
