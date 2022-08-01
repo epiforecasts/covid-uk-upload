@@ -27,6 +27,6 @@ Rscript R/r_exclusions.r remote/submit/$r_filename
 
 Rscript R/get_ons_estimates.r
 
-Rscript R/upload_files.r
+Rscript R/upload_estimates.r
 
 mv remote/submit/* remote/submitted
