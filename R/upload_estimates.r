@@ -10,8 +10,7 @@ sftp_con <-
                username = sftp_config$username,
                password = sftp_config$password)
 
-sftp_changedir("remote")
-sftp_changedir("submit")
+sftp_changedir("validate")
 
 validate_files <- list.files(here::here("remote", "submit"))
 
@@ -21,5 +20,4 @@ map(validate_files,
     sftp_upload,
     fromfolder = file.path("remote", "submit"),
     sftp_connection = sftp_con)
-
 
