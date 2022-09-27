@@ -5,6 +5,6 @@ Scotland,hospital_inc
 Wales,hospital_prev
 Northern Ireland,hospital_prev
 Scotland,hospital_prev
-Wales,death_inc_line
-Northern Ireland,death_inc_line
-Scotland,death_inc_line
+Wales,type28_death_inc_line
+Northern Ireland,type28_death_inc_line
+Scotland,type28_death_inc_line
