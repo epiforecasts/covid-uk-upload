@@ -11,9 +11,6 @@ mtp_filename="$latest_date-lshtm-forecast.csv"
 r_dir="format-rt/data/time-series"
 r_filename="$latest_date-time-series-r-lshtm.csv"
 
-cis_dir="format-rt/data/cis"
-cis_filename="$latest_date-time-series-ons-cis-lshtm.csv"
-
 [ ! -d "remote" ] && mkdir remote
 [ ! -d "remote/submit" ] && mkdir remote/submit
 [ ! -d "remote/submitted" ] && mkdir remote/submitted
@@ -24,8 +21,6 @@ wget https://raw.githubusercontent.com/epiforecasts/covid19-uk-nowcasts-projecti
 ## MTP exclusions
 Rscript R/mtp_exclusions.r remote/submit/$mtp_filename
 Rscript R/r_exclusions.r remote/submit/$r_filename
-
-Rscript R/get_ons_estimates.r
 
 Rscript R/upload_estimates.r
 
